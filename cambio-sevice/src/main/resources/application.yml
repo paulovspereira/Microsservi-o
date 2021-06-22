@@ -1,0 +1,23 @@
+server:
+  port: 8000
+spring:
+  application:
+    name: cambio-service #nome da aplicação
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cambio_service?useTimezone=true&serverTimezone=UTC #Chamada do banco através da url
+    username: root
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true # Mostra o sql usado
+    properties: # Mostra dialetro usado no banco de dados
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  flyway: #Mostra a evolução do banco de dados
+    url: jdbc:mysql://localhost:3306/
+    schemas: cambio_service
+    user: root
+    password: admin
+# Permite a evolução do banco de dados usando flyway
