@@ -1,0 +1,7 @@
+server:    port: 8080
+spring:
+  application:
+    name: greeting-service #nome da applicação  config:    import:    - optional:configserver:http://localhost:8888/   cloud:    config:      profile: qa  # qual aplication service vai executar do profile
+greeting-service:  # tipo variavel setada
+  greeting: "Olá"
+  default-value: "Mundo"
